@@ -29,10 +29,16 @@ class BookController extends Controller
 
     public function create()
     {
+        $categories = $this->categoryService->getAll();
+        return view('books.create',compact('categories'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $requestAll = $request->all();
+        $this->bookService->create($requestAll);
+        Session::flash('success', 'CREATE BOOK SUCCESS');
+       return redirect()->route('books.create');
     }
 
     public function delete($id)
@@ -45,7 +51,7 @@ class BookController extends Controller
     {
         $this->bookService->delete($id);
         Session::flash('success', 'DELETE BOOK SUCCESS');
-        redirect()->route('book.index');
+        return redirect()->route('books.index');
     }
 
     public function edit($id)

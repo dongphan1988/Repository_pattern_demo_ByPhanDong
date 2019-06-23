@@ -78,7 +78,7 @@
                             </a>
                         </div>
                         <div class="col-12 col-md-12">
-                            <a href="">
+                            <a href="{{route('books.create')}}">
                                 <button class="btn btn-outline-primary container">CREATE</button>
                             </a>
                         </div>

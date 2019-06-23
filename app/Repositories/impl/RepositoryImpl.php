@@ -5,21 +5,30 @@ namespace App\Repositories\impl;
 
 
 use App\Repositories\repositoryInterface;
+use phpDocumentor\Reflection\Types\This;
 
 abstract class RepositoryImpl implements repositoryInterface
 {
     protected $model;
+    protected $newModel;
 
     public function __construct()
     {
         $this->setModel();
+        $this->setNewModel();
     }
 
     abstract public function getModel();
+    abstract public function getNewModel();
 
     public function setModel()
     {
         $this->model = app()->make($this->getModel());
+    }
+
+    public function setNewModel()
+    {
+        $this->newModel = $this->getNewModel();
     }
 
     public function getAll()
@@ -27,6 +36,11 @@ abstract class RepositoryImpl implements repositoryInterface
         $result = $this->model->all();
         return $result;
     }
+    public function createNewObject(){
+        $result = $this->newModel;
+       return $result;
+    }
+
 
     public function getById($id)
     {
@@ -36,6 +50,7 @@ abstract class RepositoryImpl implements repositoryInterface
 
     public function create($object)
     {
+        $object->save();
     }
 
     public function update($object)

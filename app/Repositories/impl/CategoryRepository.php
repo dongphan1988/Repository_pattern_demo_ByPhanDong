@@ -13,4 +13,9 @@ public function getModel()
 {
     return Category::class;
 }
+public function getNewModel(){
+    $newModel = new Category();
+    return $newModel;
+}
+
 }
