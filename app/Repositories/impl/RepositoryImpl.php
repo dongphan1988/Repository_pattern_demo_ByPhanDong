@@ -15,20 +15,13 @@ abstract class RepositoryImpl implements repositoryInterface
     public function __construct()
     {
         $this->setModel();
-        $this->setNewModel();
     }
 
     abstract public function getModel();
-    abstract public function getNewModel();
 
     public function setModel()
     {
         $this->model = app()->make($this->getModel());
-    }
-
-    public function setNewModel()
-    {
-        $this->newModel = $this->getNewModel();
     }
 
     public function getAll()

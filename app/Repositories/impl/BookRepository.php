@@ -18,8 +18,4 @@ class BookRepository extends RepositoryImpl implements BookRepositoryInterface
         // TODO: Implement findByName() method.
     }
 
-    public function getNewModel(){
-        $newModel = new Book();
-        return $newModel;
-    }
 }

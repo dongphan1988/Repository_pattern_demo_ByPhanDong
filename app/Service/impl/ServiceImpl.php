@@ -4,6 +4,7 @@
 namespace App\Service\impl;
 
 
+use App\Book;
 use App\Service\ServiceInterface;
 use App\Exceptions\NotFoundException;
 
@@ -26,7 +27,7 @@ class ServiceImpl implements ServiceInterface
 
     public function create($requestAll)
     {
-        $newBook = $this->createNewObject();
+        $newBook = new Book();
         $newBook->title = $requestAll['title'];
         $newBook->description = $requestAll['description'];
         $newBook->price = $requestAll['price'];

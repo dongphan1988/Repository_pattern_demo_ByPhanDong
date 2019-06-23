@@ -7,7 +7,6 @@ namespace App\Repositories;
 interface repositoryInterface
 {
     public function getAll();
-    public function createNewObject();
     public function getById($id);
     public function create($object);
     public function update($object);

@@ -70,5 +70,7 @@ class BookController extends Controller
 
     public function show($id)
     {
+        $book = $this->bookService->getById($id);
+        return view('books.show', compact('book'));
     }
 }

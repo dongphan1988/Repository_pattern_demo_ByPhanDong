@@ -37,7 +37,10 @@
                     <button class="btn btn-outline-danger">DELETE</button>
                 </a>
                 <a href="{{route('books.edit',['id'=>$book->id])}}">
-                    <button class="btn btn-outline-danger">UPDATE</button>
+                    <button class="btn btn-outline-success">UPDATE</button>
+                </a>
+                <a href="{{route('books.show',['id'=>$book->id])}}">
+                    <button class="btn btn-outline-secondary">SHOW</button>
                 </a>
             </td>
         </tr>
