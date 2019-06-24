@@ -10,7 +10,6 @@ use phpDocumentor\Reflection\Types\This;
 abstract class RepositoryImpl implements repositoryInterface
 {
     protected $model;
-    protected $newModel;
 
     public function __construct()
     {
@@ -29,11 +28,6 @@ abstract class RepositoryImpl implements repositoryInterface
         $result = $this->model->all();
         return $result;
     }
-    public function createNewObject(){
-        $result = $this->newModel;
-       return $result;
-    }
-
 
     public function getById($id)
     {

@@ -29,7 +29,7 @@
             <th>{{$book->qty}}</th>
             <th>{{$book->category->name}}</th>
             <th>
-                <img src="{{asset('storage/'.$book->image)}}" style="width: 150px" class="img-thumbnail">
+                <p><iframe src="{{asset('storage/'.$book->image)}}" style="width: 200px; height: 100px" class="img-thumbnail"></iframe></p>
             </th>
             <td></td>
             <td>
