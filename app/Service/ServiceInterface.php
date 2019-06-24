@@ -12,5 +12,4 @@ public function create($requestAll);
 public function update($object,$id);
 public function delete($id);
 public function deleteAll($id);
-public function createNewObject();
 }
